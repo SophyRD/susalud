@@ -11,7 +11,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:sqlserver://susalud-mssql:1433;database=susalud
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
-      - 8080:8080
+      - 8083:8083
   susalud-mssql:
     extends:
       file: mssql.yml
