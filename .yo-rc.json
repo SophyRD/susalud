@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.susalud.c1920c",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.10.4",
+    "applicationType": "monolith",
+    "baseName": "susalud",
+    "packageName": "com.susalud.c1920c",
+    "packageFolder": "com/susalud/c1920c",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mssql",
+    "prodDatabaseType": "mssql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YThiOWE0ZjUzOWFlODA4YTBjYmMzN2MzZDAzMmE2MjdjMTQ5ZjA5MjY5YmEzM2IxMWI0ODcwYjk5Mzc5N2I3NDJkYWY0ZWE3NWZlYzI3YTBlODYyNmY0NTgwNjA0OTczZDllY2E2NTVkYTAwZGVhOTI3MDBhMjc1Y2U3N2M3ZmI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1604154510863,
+    "testFrameworks": ["cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": ["es"],
+    "blueprints": []
+  }
+}
