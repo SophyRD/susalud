@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-mes-heading" jhiTranslate="susaludApp.mes.home.createOrEditLabel">Create or edit a Mes</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.mes.idMes" for="field_idMes">Id Mes</label>
+                    <input type="number" class="form-control" name="idMes" id="field_idMes"
+                           formControlName="idMes"/>
+                    <div *ngIf="editForm.get('idMes')!.invalid && (editForm.get('idMes')!.dirty || editForm.get('idMes')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idMes')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idMes')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.mes.mMes" for="field_mMes">M Mes</label>
+                    <input type="number" class="form-control" name="mMes" id="field_mMes"
+                           formControlName="mMes"/>
+                    <div *ngIf="editForm.get('mMes')!.invalid && (editForm.get('mMes')!.dirty || editForm.get('mMes')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mMes')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('mMes')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.mes.mAno" for="field_mAno">M Ano</label>
+                    <input type="number" class="form-control" name="mAno" id="field_mAno"
+                           formControlName="mAno"/>
+                    <div *ngIf="editForm.get('mAno')!.invalid && (editForm.get('mAno')!.dirty || editForm.get('mAno')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mAno')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('mAno')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

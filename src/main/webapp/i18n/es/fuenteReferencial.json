@@ -1,0 +1,32 @@
+{
+  "susaludApp": {
+    "fuenteReferencial": {
+      "home": {
+        "title": "Fuente Referencials",
+        "createLabel": "Crear nuevo Fuente Referencial",
+        "createOrEditLabel": "Crear o editar Fuente Referencial",
+        "notFound": "Ningún Fuente Referencials encontrado"
+      },
+      "created": "Un nuevo Fuente Referencial ha sido creado con el identificador {{ param }}",
+      "updated": "Un Fuente Referencial ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Fuente Referencial ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Fuente Referencial {{ id }}?"
+      },
+      "detail": {
+        "title": "Fuente Referencial"
+      },
+      "idFuenteReferencial": "Id Fuente Referencial",
+      "frNombre": "Fr Nombre",
+      "frFechaCreacion": "Fr Fecha Creacion",
+      "frFechaModificacion": "Fr Fecha Modificacion",
+      "idAutoevalucionXproceso": "Id Autoevalucion Xproceso",
+      "idAutoevalucion": "Id Autoevalucion",
+      "idMes": "Id Mes",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion",
+      "idEstado": "Id Estado",
+      "idVerificador": "Id Verificador",
+      "idFuenteReferenciaXItem": "Id Fuente Referencia X Item"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "susaludApp": {
+    "usuarioXEvaluacioXEntidad": {
+      "home": {
+        "title": "Usuario X Evaluacio X Entidads",
+        "createLabel": "Crear nuevo Usuario X Evaluacio X Entidad",
+        "createOrEditLabel": "Crear o editar Usuario X Evaluacio X Entidad",
+        "notFound": "Ningún Usuario X Evaluacio X Entidads encontrado"
+      },
+      "created": "Un nuevo Usuario X Evaluacio X Entidad ha sido creado con el identificador {{ param }}",
+      "updated": "Un Usuario X Evaluacio X Entidad ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Usuario X Evaluacio X Entidad ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Usuario X Evaluacio X Entidad {{ id }}?"
+      },
+      "detail": {
+        "title": "Usuario X Evaluacio X Entidad"
+      },
+      "idUsuarioXEvaluacioXEntidad": "Id Usuario X Evaluacio X Entidad",
+      "ueeFechaCreacion": "Uee Fecha Creacion",
+      "ueeFechaModificacion": "Uee Fecha Modificacion",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion"
+    }
+  }
+}

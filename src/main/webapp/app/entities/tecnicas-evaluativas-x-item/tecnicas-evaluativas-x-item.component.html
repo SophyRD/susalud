@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.home.title">Tecnicas Evaluativas X Items</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tecnicas-evaluativas-x-item" [routerLink]="['/tecnicas-evaluativas-x-item/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.tecnicasEvaluativasXItem.home.createLabel">
+            Create a new Tecnicas Evaluativas X Item
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tecnicasEvaluativasXItems?.length === 0">
+        <span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.home.notFound">No tecnicasEvaluativasXItems found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tecnicasEvaluativasXItems && tecnicasEvaluativasXItems.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.idTecnicasEvaluativasXItem">Id Tecnicas Evaluativas X Item</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.tiFechaCreacion">Ti Fecha Creacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.tiFechaModificacion">Ti Fecha Modificacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativasXItem.tiNombre">Ti Nombre</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tecnicasEvaluativasXItem of tecnicasEvaluativasXItems ;trackBy: trackId">
+                    <td><a [routerLink]="['/tecnicas-evaluativas-x-item', tecnicasEvaluativasXItem.id, 'view']">{{ tecnicasEvaluativasXItem.id }}</a></td>
+                    <td>{{ tecnicasEvaluativasXItem.idTecnicasEvaluativasXItem }}</td>
+                    <td>{{ tecnicasEvaluativasXItem.tiFechaCreacion | date:'mediumDate' }}</td>
+                    <td>{{ tecnicasEvaluativasXItem.tiFechaModificacion | date:'mediumDate' }}</td>
+                    <td>{{ tecnicasEvaluativasXItem.tiNombre }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tecnicas-evaluativas-x-item', tecnicasEvaluativasXItem.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tecnicas-evaluativas-x-item', tecnicasEvaluativasXItem.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tecnicasEvaluativasXItem)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

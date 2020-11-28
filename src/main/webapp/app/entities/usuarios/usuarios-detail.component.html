@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="usuarios">
+            <h2><span jhiTranslate="susaludApp.usuarios.detail.title">Usuarios</span> {{ usuarios.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.usuarios.idUsuario">Id Usuario</span></dt>
+                <dd>
+                    <span>{{ usuarios.idUsuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarios.usUsuario">Us Usuario</span></dt>
+                <dd>
+                    <span>{{ usuarios.usUsuario }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarios.usContrasena">Us Contrasena</span></dt>
+                <dd>
+                    <span>{{ usuarios.usContrasena }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarios.usuariosIdUsuarios">Usuarios Id Usuarios</span></dt>
+                <dd>
+                    <span>{{ usuarios.usuariosIdUsuarios }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarios.usuariosPerfilIdPerfil">Usuarios Perfil Id Perfil</span></dt>
+                <dd>
+                    <span>{{ usuarios.usuariosPerfilIdPerfil }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/usuarios', usuarios.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

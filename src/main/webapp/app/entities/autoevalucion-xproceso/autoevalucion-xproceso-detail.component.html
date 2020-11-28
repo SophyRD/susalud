@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="autoevalucionXproceso">
+            <h2><span jhiTranslate="susaludApp.autoevalucionXproceso.detail.title">Autoevalucion Xproceso</span> {{ autoevalucionXproceso.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idAutoevalucionXproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.apFechaCreacion">Ap Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.apFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.spFechaModificacion">Sp Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.spFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.apComentario">Ap Comentario</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.apComentario }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.apPuntuacion">Ap Puntuacion</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.apPuntuacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idAutoevalucion">Id Autoevalucion</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idAutoevalucion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idMes">Id Mes</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idMes }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idUsuariosXevaluacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idEstado">Id Estado</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idEstado }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.autoevalucionXproceso.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ autoevalucionXproceso.idVerificador }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/autoevalucion-xproceso', autoevalucionXproceso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

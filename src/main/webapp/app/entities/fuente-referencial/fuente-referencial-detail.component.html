@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fuenteReferencial">
+            <h2><span jhiTranslate="susaludApp.fuenteReferencial.detail.title">Fuente Referencial</span> {{ fuenteReferencial.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idFuenteReferencial">Id Fuente Referencial</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idFuenteReferencial }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.frNombre">Fr Nombre</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.frNombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.frFechaCreacion">Fr Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.frFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.frFechaModificacion">Fr Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.frFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idAutoevalucionXproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idAutoevalucion">Id Autoevalucion</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idAutoevalucion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idMes">Id Mes</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idMes }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idUsuariosXevaluacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idEstado">Id Estado</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idEstado }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idVerificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.fuenteReferencial.idFuenteReferenciaXItem">Id Fuente Referencia X Item</span></dt>
+                <dd>
+                    <span>{{ fuenteReferencial.idFuenteReferenciaXItem }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fuente-referencial', fuenteReferencial.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "susaludApp": {
+    "estado": {
+      "home": {
+        "title": "Estados",
+        "createLabel": "Crear nuevo Estado",
+        "createOrEditLabel": "Crear o editar Estado",
+        "notFound": "Ningún Estados encontrado"
+      },
+      "created": "Un nuevo Estado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estado {{ id }}?"
+      },
+      "detail": {
+        "title": "Estado"
+      },
+      "idEstado": "Id Estado",
+      "eEstado": "E Estado",
+      "idVerificador": "Id Verificador"
+    }
+  }
+}

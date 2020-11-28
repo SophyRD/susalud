@@ -14,6 +14,26 @@
     <property name="uuidType" value="uuid" dbms="h2, mssql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128024909_added_entity_Verificador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025009_added_entity_Maestraverificador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025109_added_entity_Mes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025209_added_entity_Periodo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025309_added_entity_UsuariosXevaluacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025409_added_entity_Perfil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025509_added_entity_Estado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025609_added_entity_Autoevalucion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025709_added_entity_Usuarios.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025809_added_entity_AutoevalucionXproceso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128025909_added_entity_TecnicasEvaluativasXItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030009_added_entity_TecnicasEvaluativas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030109_added_entity_Macroproceso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030209_added_entity_Proceso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030309_added_entity_Subproceso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030409_added_entity_FuenteReferenciaXItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030509_added_entity_FuenteReferencial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030609_added_entity_CriteriosEvaluacionXItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030709_added_entity_CriteriosEvaluacion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128030809_added_entity_UsuarioXEvaluacioXEntidad.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->

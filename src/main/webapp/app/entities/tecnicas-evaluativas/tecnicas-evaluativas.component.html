@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.tecnicasEvaluativas.home.title">Tecnicas Evaluativas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tecnicas-evaluativas" [routerLink]="['/tecnicas-evaluativas/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.tecnicasEvaluativas.home.createLabel">
+            Create a new Tecnicas Evaluativas
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tecnicasEvaluativas?.length === 0">
+        <span jhiTranslate="susaludApp.tecnicasEvaluativas.home.notFound">No tecnicasEvaluativas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tecnicasEvaluativas && tecnicasEvaluativas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idTecnicasEvaluativas">Id Tecnicas Evaluativas</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.teNombre">Te Nombre</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.teFechaCreacion">Te Fecha Creacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.teFechaModificacion">Te Fecha Modificacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idAutoevalucion">Id Autoevalucion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idMes">Id Mes</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idEstado">Id Estado</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idVerificador">Id Verificador</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.tecnicasEvaluativas.idTecnicasEvaluativasXItem">Id Tecnicas Evaluativas X Item</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tecnicasEvaluativas of tecnicasEvaluativas ;trackBy: trackId">
+                    <td><a [routerLink]="['/tecnicas-evaluativas', tecnicasEvaluativas.id, 'view']">{{ tecnicasEvaluativas.id }}</a></td>
+                    <td>{{ tecnicasEvaluativas.idTecnicasEvaluativas }}</td>
+                    <td>{{ tecnicasEvaluativas.teNombre }}</td>
+                    <td>{{ tecnicasEvaluativas.teFechaCreacion | date:'mediumDate' }}</td>
+                    <td>{{ tecnicasEvaluativas.teFechaModificacion | date:'mediumDate' }}</td>
+                    <td>{{ tecnicasEvaluativas.idAutoevalucionXproceso }}</td>
+                    <td>{{ tecnicasEvaluativas.idAutoevalucion }}</td>
+                    <td>{{ tecnicasEvaluativas.idMes }}</td>
+                    <td>{{ tecnicasEvaluativas.idUsuariosXevaluacion }}</td>
+                    <td>{{ tecnicasEvaluativas.idEstado }}</td>
+                    <td>{{ tecnicasEvaluativas.idVerificador }}</td>
+                    <td>{{ tecnicasEvaluativas.idTecnicasEvaluativasXItem }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tecnicas-evaluativas', tecnicasEvaluativas.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tecnicas-evaluativas', tecnicasEvaluativas.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tecnicasEvaluativas)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

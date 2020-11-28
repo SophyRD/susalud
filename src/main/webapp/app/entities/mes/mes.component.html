@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.mes.home.title">Mes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-mes" [routerLink]="['/mes/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.mes.home.createLabel">
+            Create a new Mes
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="mes?.length === 0">
+        <span jhiTranslate="susaludApp.mes.home.notFound">No mes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="mes && mes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.mes.idMes">Id Mes</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.mes.mMes">M Mes</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.mes.mAno">M Ano</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mes of mes ;trackBy: trackId">
+                    <td><a [routerLink]="['/mes', mes.id, 'view']">{{ mes.id }}</a></td>
+                    <td>{{ mes.idMes }}</td>
+                    <td>{{ mes.mMes }}</td>
+                    <td>{{ mes.mAno }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/mes', mes.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/mes', mes.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(mes)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

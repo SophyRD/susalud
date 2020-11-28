@@ -1,0 +1,25 @@
+{
+  "susaludApp": {
+    "macroproceso": {
+      "home": {
+        "title": "Macroprocesos",
+        "createLabel": "Crear nuevo Macroproceso",
+        "createOrEditLabel": "Crear o editar Macroproceso",
+        "notFound": "Ningún Macroprocesos encontrado"
+      },
+      "created": "Un nuevo Macroproceso ha sido creado con el identificador {{ param }}",
+      "updated": "Un Macroproceso ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Macroproceso ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Macroproceso {{ id }}?"
+      },
+      "detail": {
+        "title": "Macroproceso"
+      },
+      "idMacroproceso": "Id Macroproceso",
+      "maFechaCreacion": "Ma Fecha Creacion",
+      "maFechaModificacion": "Ma Fecha Modificacion",
+      "verificadorlIdVerificador": "Verificadorl Id Verificador"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "susaludApp": {
+    "tecnicasEvaluativas": {
+      "home": {
+        "title": "Tecnicas Evaluativas",
+        "createLabel": "Crear nuevo Tecnicas Evaluativas",
+        "createOrEditLabel": "Crear o editar Tecnicas Evaluativas",
+        "notFound": "Ningún Tecnicas Evaluativas encontrado"
+      },
+      "created": "Un nuevo Tecnicas Evaluativas ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tecnicas Evaluativas ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tecnicas Evaluativas ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tecnicas Evaluativas {{ id }}?"
+      },
+      "detail": {
+        "title": "Tecnicas Evaluativas"
+      },
+      "idTecnicasEvaluativas": "Id Tecnicas Evaluativas",
+      "teNombre": "Te Nombre",
+      "teFechaCreacion": "Te Fecha Creacion",
+      "teFechaModificacion": "Te Fecha Modificacion",
+      "idAutoevalucionXproceso": "Id Autoevalucion Xproceso",
+      "idAutoevalucion": "Id Autoevalucion",
+      "idMes": "Id Mes",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion",
+      "idEstado": "Id Estado",
+      "idVerificador": "Id Verificador",
+      "idTecnicasEvaluativasXItem": "Id Tecnicas Evaluativas X Item"
+    }
+  }
+}

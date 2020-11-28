@@ -1,0 +1,24 @@
+{
+  "susaludApp": {
+    "periodo": {
+      "home": {
+        "title": "Periodos",
+        "createLabel": "Crear nuevo Periodo",
+        "createOrEditLabel": "Crear o editar Periodo",
+        "notFound": "Ningún Periodos encontrado"
+      },
+      "created": "Un nuevo Periodo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Periodo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Periodo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Periodo {{ id }}?"
+      },
+      "detail": {
+        "title": "Periodo"
+      },
+      "idPeriodo": "Id Periodo",
+      "pPeriodo": "P Periodo",
+      "mesIdMes": "Mes Id Mes"
+    }
+  }
+}

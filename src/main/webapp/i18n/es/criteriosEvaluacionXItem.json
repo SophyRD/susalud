@@ -1,0 +1,25 @@
+{
+  "susaludApp": {
+    "criteriosEvaluacionXItem": {
+      "home": {
+        "title": "Criterios Evaluacion X Items",
+        "createLabel": "Crear nuevo Criterios Evaluacion X Item",
+        "createOrEditLabel": "Crear o editar Criterios Evaluacion X Item",
+        "notFound": "Ningún Criterios Evaluacion X Items encontrado"
+      },
+      "created": "Un nuevo Criterios Evaluacion X Item ha sido creado con el identificador {{ param }}",
+      "updated": "Un Criterios Evaluacion X Item ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Criterios Evaluacion X Item ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Criterios Evaluacion X Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Criterios Evaluacion X Item"
+      },
+      "idCriteriosEvaluacionXItem": "Id Criterios Evaluacion X Item",
+      "ceiFechaCreacion": "Cei Fecha Creacion",
+      "ceiFechaModificacion": "Cei Fecha Modificacion",
+      "ceiNombre": "Cei Nombre"
+    }
+  }
+}

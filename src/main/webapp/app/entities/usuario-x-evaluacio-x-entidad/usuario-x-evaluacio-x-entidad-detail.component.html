@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="usuarioXEvaluacioXEntidad">
+            <h2><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.detail.title">Usuario X Evaluacio X Entidad</span> {{ usuarioXEvaluacioXEntidad.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuarioXEvaluacioXEntidad">Id Usuario X Evaluacio X Entidad</span></dt>
+                <dd>
+                    <span>{{ usuarioXEvaluacioXEntidad.idUsuarioXEvaluacioXEntidad }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaCreacion">Uee Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ usuarioXEvaluacioXEntidad.ueeFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaModificacion">Uee Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ usuarioXEvaluacioXEntidad.ueeFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></dt>
+                <dd>
+                    <span>{{ usuarioXEvaluacioXEntidad.idUsuariosXevaluacion }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/usuario-x-evaluacio-x-entidad', usuarioXEvaluacioXEntidad.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="criteriosEvaluacion">
+            <h2><span jhiTranslate="susaludApp.criteriosEvaluacion.detail.title">Criterios Evaluacion</span> {{ criteriosEvaluacion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacion">Id Criterios Evaluacion</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idCriteriosEvaluacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.ceNombre">Ce Nombre</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.ceNombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaCreacion">Ce Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.ceFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaModificacion">Ce Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.ceFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idAutoevalucionXproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucion">Id Autoevalucion</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idAutoevalucion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idMes">Id Mes</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idMes }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idUsuariosXevaluacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idEstado">Id Estado</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idEstado }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idVerificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacionXItem">Id Criterios Evaluacion X Item</span></dt>
+                <dd>
+                    <span>{{ criteriosEvaluacion.idCriteriosEvaluacionXItem }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/criterios-evaluacion', criteriosEvaluacion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

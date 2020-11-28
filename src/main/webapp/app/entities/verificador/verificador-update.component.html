@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-verificador-heading" jhiTranslate="susaludApp.verificador.home.createOrEditLabel">Create or edit a Verificador</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.verificador.idVerificador" for="field_idVerificador">Id Verificador</label>
+                    <input type="number" class="form-control" name="idVerificador" id="field_idVerificador"
+                           formControlName="idVerificador"/>
+                    <div *ngIf="editForm.get('idVerificador')!.invalid && (editForm.get('idVerificador')!.dirty || editForm.get('idVerificador')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idVerificador')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idVerificador')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.verificador.v1FechaCreacion" for="field_v1FechaCreacion">V 1 Fecha Creacion</label>
+                    <div class="input-group">
+                        <input id="field_v1FechaCreacion" type="text" class="form-control" name="v1FechaCreacion" ngbDatepicker #v1FechaCreacionDp="ngbDatepicker" formControlName="v1FechaCreacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="v1FechaCreacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('v1FechaCreacion')!.invalid && (editForm.get('v1FechaCreacion')!.dirty || editForm.get('v1FechaCreacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('v1FechaCreacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.verificador.v1FechaModificacion" for="field_v1FechaModificacion">V 1 Fecha Modificacion</label>
+                    <div class="input-group">
+                        <input id="field_v1FechaModificacion" type="text" class="form-control" name="v1FechaModificacion" ngbDatepicker #v1FechaModificacionDp="ngbDatepicker" formControlName="v1FechaModificacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="v1FechaModificacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('v1FechaModificacion')!.invalid && (editForm.get('v1FechaModificacion')!.dirty || editForm.get('v1FechaModificacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('v1FechaModificacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

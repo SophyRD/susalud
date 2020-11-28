@@ -1,0 +1,198 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-criterios-evaluacion-heading" jhiTranslate="susaludApp.criteriosEvaluacion.home.createOrEditLabel">Create or edit a Criterios Evaluacion</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacion" for="field_idCriteriosEvaluacion">Id Criterios Evaluacion</label>
+                    <input type="number" class="form-control" name="idCriteriosEvaluacion" id="field_idCriteriosEvaluacion"
+                           formControlName="idCriteriosEvaluacion"/>
+                    <div *ngIf="editForm.get('idCriteriosEvaluacion')!.invalid && (editForm.get('idCriteriosEvaluacion')!.dirty || editForm.get('idCriteriosEvaluacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idCriteriosEvaluacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idCriteriosEvaluacion')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.ceNombre" for="field_ceNombre">Ce Nombre</label>
+                    <input type="text" class="form-control" name="ceNombre" id="field_ceNombre"
+                           formControlName="ceNombre"/>
+                    <div *ngIf="editForm.get('ceNombre')!.invalid && (editForm.get('ceNombre')!.dirty || editForm.get('ceNombre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ceNombre')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaCreacion" for="field_ceFechaCreacion">Ce Fecha Creacion</label>
+                    <div class="input-group">
+                        <input id="field_ceFechaCreacion" type="text" class="form-control" name="ceFechaCreacion" ngbDatepicker #ceFechaCreacionDp="ngbDatepicker" formControlName="ceFechaCreacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="ceFechaCreacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('ceFechaCreacion')!.invalid && (editForm.get('ceFechaCreacion')!.dirty || editForm.get('ceFechaCreacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ceFechaCreacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaModificacion" for="field_ceFechaModificacion">Ce Fecha Modificacion</label>
+                    <div class="input-group">
+                        <input id="field_ceFechaModificacion" type="text" class="form-control" name="ceFechaModificacion" ngbDatepicker #ceFechaModificacionDp="ngbDatepicker" formControlName="ceFechaModificacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="ceFechaModificacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('ceFechaModificacion')!.invalid && (editForm.get('ceFechaModificacion')!.dirty || editForm.get('ceFechaModificacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ceFechaModificacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucionXproceso" for="field_idAutoevalucionXproceso">Id Autoevalucion Xproceso</label>
+                    <input type="number" class="form-control" name="idAutoevalucionXproceso" id="field_idAutoevalucionXproceso"
+                           formControlName="idAutoevalucionXproceso"/>
+                    <div *ngIf="editForm.get('idAutoevalucionXproceso')!.invalid && (editForm.get('idAutoevalucionXproceso')!.dirty || editForm.get('idAutoevalucionXproceso')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idAutoevalucionXproceso')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idAutoevalucionXproceso')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucion" for="field_idAutoevalucion">Id Autoevalucion</label>
+                    <input type="number" class="form-control" name="idAutoevalucion" id="field_idAutoevalucion"
+                           formControlName="idAutoevalucion"/>
+                    <div *ngIf="editForm.get('idAutoevalucion')!.invalid && (editForm.get('idAutoevalucion')!.dirty || editForm.get('idAutoevalucion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idAutoevalucion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idAutoevalucion')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idMes" for="field_idMes">Id Mes</label>
+                    <input type="number" class="form-control" name="idMes" id="field_idMes"
+                           formControlName="idMes"/>
+                    <div *ngIf="editForm.get('idMes')!.invalid && (editForm.get('idMes')!.dirty || editForm.get('idMes')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idMes')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idMes')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idUsuariosXevaluacion" for="field_idUsuariosXevaluacion">Id Usuarios Xevaluacion</label>
+                    <input type="number" class="form-control" name="idUsuariosXevaluacion" id="field_idUsuariosXevaluacion"
+                           formControlName="idUsuariosXevaluacion"/>
+                    <div *ngIf="editForm.get('idUsuariosXevaluacion')!.invalid && (editForm.get('idUsuariosXevaluacion')!.dirty || editForm.get('idUsuariosXevaluacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idUsuariosXevaluacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idUsuariosXevaluacion')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idEstado" for="field_idEstado">Id Estado</label>
+                    <input type="number" class="form-control" name="idEstado" id="field_idEstado"
+                           formControlName="idEstado"/>
+                    <div *ngIf="editForm.get('idEstado')!.invalid && (editForm.get('idEstado')!.dirty || editForm.get('idEstado')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idEstado')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idEstado')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idVerificador" for="field_idVerificador">Id Verificador</label>
+                    <input type="number" class="form-control" name="idVerificador" id="field_idVerificador"
+                           formControlName="idVerificador"/>
+                    <div *ngIf="editForm.get('idVerificador')!.invalid && (editForm.get('idVerificador')!.dirty || editForm.get('idVerificador')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idVerificador')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idVerificador')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacionXItem" for="field_idCriteriosEvaluacionXItem">Id Criterios Evaluacion X Item</label>
+                    <input type="number" class="form-control" name="idCriteriosEvaluacionXItem" id="field_idCriteriosEvaluacionXItem"
+                           formControlName="idCriteriosEvaluacionXItem"/>
+                    <div *ngIf="editForm.get('idCriteriosEvaluacionXItem')!.invalid && (editForm.get('idCriteriosEvaluacionXItem')!.dirty || editForm.get('idCriteriosEvaluacionXItem')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idCriteriosEvaluacionXItem')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idCriteriosEvaluacionXItem')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

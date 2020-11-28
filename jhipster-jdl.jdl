@@ -1,0 +1,172 @@
+
+entity Verificador {
+	idVerificador Integer required,
+    v1FechaCreacion LocalDate required,
+    v1FechaModificacion LocalDate required,   
+}
+
+entity Maestraverificador {
+	idMaestraverificador Integer required,
+    mvFecha LocalDate required,
+    mvFechaModificacion LocalDate required,
+    idVerificador Integer required
+}
+
+entity Mes {
+	idMes Integer required,
+    mMes Integer required,
+    mAno Integer required,
+}
+
+entity Periodo {
+	idPeriodo Integer required,
+    pPeriodo String required,
+    mesIdMes Integer required,
+}
+
+entity UsuariosXevaluacion {
+	idUsuariosXevaluacion Integer required,
+    uFechaModificacion LocalDate required,
+    uFechaCreacion LocalDate required,
+}
+
+entity Perfil {
+	idPerfil Integer required,
+    peDescripcion String required,
+}
+
+entity Estado {
+	idEstado Integer required,
+    eEstado String required,
+    idVerificador Integer required,
+}
+
+entity Autoevalucion {
+	idAutoevalucion Integer required,
+    aAvance String required,
+    idMes Integer required,
+    idUsuariosXevaluacion Integer required,
+    idEstado Integer required,
+}
+
+entity Usuarios {
+	idUsuarios Integer required,
+    usIdentificacion Integer required,
+    usEmail Integer required,
+    usNombre String required,
+    usApellido String required,
+    usEmail1 String required,
+    perfilIdPerfil Integer required,
+}
+
+entity Usuarios {
+	idUsuario Integer required,
+    usUsuario String required,
+    usContrasena String required,
+    usuariosIdUsuarios Integer required,
+    usuariosPerfilIdPerfil Integer required,
+}
+
+entity AutoevalucionXproceso {
+	idAutoevalucionXproceso Integer required,
+    apFechaCreacion LocalDate required,
+    spFechaModificacion LocalDate required,
+    apComentario String required,
+    apPuntuacion Integer required,
+    idAutoevalucion Integer required,
+    idMes Integer required,
+    idUsuariosXevaluacion Integer required,
+    idEstado Integer required,
+    idVerificador Integer required,
+}
+
+entity TecnicasEvaluativasXItem {
+	idTecnicasEvaluativasXItem Integer required,
+    tiFechaCreacion LocalDate required,
+    tiFechaModificacion LocalDate required,
+    tiNombre String required,
+}
+
+entity TecnicasEvaluativas {
+	idTecnicasEvaluativas Integer required,
+    teNombre String required,
+    teFechaCreacion LocalDate required,
+    teFechaModificacion LocalDate required,
+    idAutoevalucionXproceso Integer required,
+    idAutoevalucion Integer required,
+    idMes Integer required,
+    idUsuariosXevaluacion Integer required,
+    idEstado Integer required,
+    idVerificador Integer required,
+    idTecnicasEvaluativasXItem Integer required
+}
+
+entity Macroproceso {
+	idMacroproceso Integer required,
+    maFechaCreacion LocalDate required,
+    maFechaModificacion LocalDate required,
+    verificadorlIdVerificador Integer required,
+}
+
+entity Proceso {
+	idProceso Integer required,
+    prDescripcion String required,
+    idMacroproceso LocalDate required,
+    idVerificador Integer required,
+}
+
+entity Subproceso {
+	idSubproceso Integer required,
+    spDescripcion String required,
+    idProceso Integer required,
+    idMacroproceso Integer required,
+    idVerificador Integer required,
+}
+
+entity FuenteReferenciaXItem {
+	idFuenteReferenciaXItem Integer required,
+    friFechaCreacion LocalDate required,
+    friFechaModificacion LocalDate required,
+    friNombre String required,
+}
+
+entity FuenteReferencial {
+	idFuenteReferencial Integer required,
+    frNombre String required,
+    frFechaCreacion LocalDate required,
+    frFechaModificacion LocalDate required,
+    idAutoevalucionXproceso Integer required,
+    idAutoevalucion Integer required,
+    idMes Integer required,
+    idUsuariosXevaluacion Integer required,
+    idEstado Integer required,
+    idVerificador Integer required,
+    idFuenteReferenciaXItem Integer required
+}
+
+entity CriteriosEvaluacionXItem {
+	idCriteriosEvaluacionXItem Integer required,
+    ceiFechaCreacion LocalDate required,
+    ceiFechaModificacion LocalDate required,
+    ceiNombre String required,
+}
+
+entity CriteriosEvaluacion {
+	idCriteriosEvaluacion Integer required,
+    ceNombre String required,
+    ceFechaCreacion LocalDate required,
+    ceFechaModificacion LocalDate required,
+    idAutoevalucionXproceso Integer required,
+    idAutoevalucion Integer required,
+    idMes Integer required,
+    idUsuariosXevaluacion Integer required,
+    idEstado Integer required,
+    idVerificador Integer required,
+    idCriteriosEvaluacionXItem Integer required
+}
+entity UsuarioXEvaluacioXEntidad {
+	idUsuarioXEvaluacioXEntidad Integer required,
+    ueeFechaCreacion LocalDate required,
+    ueeFechaModificacion LocalDate required,
+    idUsuariosXevaluacion Integer required,
+}

@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.subproceso.home.title">Subprocesos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-subproceso" [routerLink]="['/subproceso/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.subproceso.home.createLabel">
+            Create a new Subproceso
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="subprocesos?.length === 0">
+        <span jhiTranslate="susaludApp.subproceso.home.notFound">No subprocesos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="subprocesos && subprocesos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.subproceso.idSubproceso">Id Subproceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.subproceso.spDescripcion">Sp Descripcion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.subproceso.idProceso">Id Proceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.subproceso.idMacroproceso">Id Macroproceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.subproceso.idVerificador">Id Verificador</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subproceso of subprocesos ;trackBy: trackId">
+                    <td><a [routerLink]="['/subproceso', subproceso.id, 'view']">{{ subproceso.id }}</a></td>
+                    <td>{{ subproceso.idSubproceso }}</td>
+                    <td>{{ subproceso.spDescripcion }}</td>
+                    <td>{{ subproceso.idProceso }}</td>
+                    <td>{{ subproceso.idMacroproceso }}</td>
+                    <td>{{ subproceso.idVerificador }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/subproceso', subproceso.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/subproceso', subproceso.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(subproceso)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

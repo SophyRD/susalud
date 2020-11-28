@@ -1,0 +1,31 @@
+{
+  "susaludApp": {
+    "autoevalucionXproceso": {
+      "home": {
+        "title": "Autoevalucion Xprocesos",
+        "createLabel": "Crear nuevo Autoevalucion Xproceso",
+        "createOrEditLabel": "Crear o editar Autoevalucion Xproceso",
+        "notFound": "Ningún Autoevalucion Xprocesos encontrado"
+      },
+      "created": "Un nuevo Autoevalucion Xproceso ha sido creado con el identificador {{ param }}",
+      "updated": "Un Autoevalucion Xproceso ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Autoevalucion Xproceso ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Autoevalucion Xproceso {{ id }}?"
+      },
+      "detail": {
+        "title": "Autoevalucion Xproceso"
+      },
+      "idAutoevalucionXproceso": "Id Autoevalucion Xproceso",
+      "apFechaCreacion": "Ap Fecha Creacion",
+      "spFechaModificacion": "Sp Fecha Modificacion",
+      "apComentario": "Ap Comentario",
+      "apPuntuacion": "Ap Puntuacion",
+      "idAutoevalucion": "Id Autoevalucion",
+      "idMes": "Id Mes",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion",
+      "idEstado": "Id Estado",
+      "idVerificador": "Id Verificador"
+    }
+  }
+}

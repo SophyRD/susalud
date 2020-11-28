@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.home.title">Usuario X Evaluacio X Entidads</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-usuario-x-evaluacio-x-entidad" [routerLink]="['/usuario-x-evaluacio-x-entidad/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.home.createLabel">
+            Create a new Usuario X Evaluacio X Entidad
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="usuarioXEvaluacioXEntidads?.length === 0">
+        <span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.home.notFound">No usuarioXEvaluacioXEntidads found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="usuarioXEvaluacioXEntidads && usuarioXEvaluacioXEntidads.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuarioXEvaluacioXEntidad">Id Usuario X Evaluacio X Entidad</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaCreacion">Uee Fecha Creacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaModificacion">Uee Fecha Modificacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuarioXEvaluacioXEntidad of usuarioXEvaluacioXEntidads ;trackBy: trackId">
+                    <td><a [routerLink]="['/usuario-x-evaluacio-x-entidad', usuarioXEvaluacioXEntidad.id, 'view']">{{ usuarioXEvaluacioXEntidad.id }}</a></td>
+                    <td>{{ usuarioXEvaluacioXEntidad.idUsuarioXEvaluacioXEntidad }}</td>
+                    <td>{{ usuarioXEvaluacioXEntidad.ueeFechaCreacion | date:'mediumDate' }}</td>
+                    <td>{{ usuarioXEvaluacioXEntidad.ueeFechaModificacion | date:'mediumDate' }}</td>
+                    <td>{{ usuarioXEvaluacioXEntidad.idUsuariosXevaluacion }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/usuario-x-evaluacio-x-entidad', usuarioXEvaluacioXEntidad.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/usuario-x-evaluacio-x-entidad', usuarioXEvaluacioXEntidad.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(usuarioXEvaluacioXEntidad)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

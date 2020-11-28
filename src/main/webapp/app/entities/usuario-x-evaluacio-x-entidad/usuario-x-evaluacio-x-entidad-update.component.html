@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-usuario-x-evaluacio-x-entidad-heading" jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.home.createOrEditLabel">Create or edit a Usuario X Evaluacio X Entidad</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuarioXEvaluacioXEntidad" for="field_idUsuarioXEvaluacioXEntidad">Id Usuario X Evaluacio X Entidad</label>
+                    <input type="number" class="form-control" name="idUsuarioXEvaluacioXEntidad" id="field_idUsuarioXEvaluacioXEntidad"
+                           formControlName="idUsuarioXEvaluacioXEntidad"/>
+                    <div *ngIf="editForm.get('idUsuarioXEvaluacioXEntidad')!.invalid && (editForm.get('idUsuarioXEvaluacioXEntidad')!.dirty || editForm.get('idUsuarioXEvaluacioXEntidad')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idUsuarioXEvaluacioXEntidad')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idUsuarioXEvaluacioXEntidad')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaCreacion" for="field_ueeFechaCreacion">Uee Fecha Creacion</label>
+                    <div class="input-group">
+                        <input id="field_ueeFechaCreacion" type="text" class="form-control" name="ueeFechaCreacion" ngbDatepicker #ueeFechaCreacionDp="ngbDatepicker" formControlName="ueeFechaCreacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="ueeFechaCreacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('ueeFechaCreacion')!.invalid && (editForm.get('ueeFechaCreacion')!.dirty || editForm.get('ueeFechaCreacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ueeFechaCreacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.ueeFechaModificacion" for="field_ueeFechaModificacion">Uee Fecha Modificacion</label>
+                    <div class="input-group">
+                        <input id="field_ueeFechaModificacion" type="text" class="form-control" name="ueeFechaModificacion" ngbDatepicker #ueeFechaModificacionDp="ngbDatepicker" formControlName="ueeFechaModificacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="ueeFechaModificacionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('ueeFechaModificacion')!.invalid && (editForm.get('ueeFechaModificacion')!.dirty || editForm.get('ueeFechaModificacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ueeFechaModificacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.usuarioXEvaluacioXEntidad.idUsuariosXevaluacion" for="field_idUsuariosXevaluacion">Id Usuarios Xevaluacion</label>
+                    <input type="number" class="form-control" name="idUsuariosXevaluacion" id="field_idUsuariosXevaluacion"
+                           formControlName="idUsuariosXevaluacion"/>
+                    <div *ngIf="editForm.get('idUsuariosXevaluacion')!.invalid && (editForm.get('idUsuariosXevaluacion')!.dirty || editForm.get('idUsuariosXevaluacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idUsuariosXevaluacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idUsuariosXevaluacion')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

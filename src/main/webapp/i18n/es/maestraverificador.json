@@ -1,0 +1,25 @@
+{
+  "susaludApp": {
+    "maestraverificador": {
+      "home": {
+        "title": "Maestraverificadors",
+        "createLabel": "Crear nuevo Maestraverificador",
+        "createOrEditLabel": "Crear o editar Maestraverificador",
+        "notFound": "Ningún Maestraverificadors encontrado"
+      },
+      "created": "Un nuevo Maestraverificador ha sido creado con el identificador {{ param }}",
+      "updated": "Un Maestraverificador ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Maestraverificador ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Maestraverificador {{ id }}?"
+      },
+      "detail": {
+        "title": "Maestraverificador"
+      },
+      "idMaestraverificador": "Id Maestraverificador",
+      "mvFecha": "Mv Fecha",
+      "mvFechaModificacion": "Mv Fecha Modificacion",
+      "idVerificador": "Id Verificador"
+    }
+  }
+}

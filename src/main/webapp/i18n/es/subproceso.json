@@ -1,0 +1,26 @@
+{
+  "susaludApp": {
+    "subproceso": {
+      "home": {
+        "title": "Subprocesos",
+        "createLabel": "Crear nuevo Subproceso",
+        "createOrEditLabel": "Crear o editar Subproceso",
+        "notFound": "Ningún Subprocesos encontrado"
+      },
+      "created": "Un nuevo Subproceso ha sido creado con el identificador {{ param }}",
+      "updated": "Un Subproceso ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Subproceso ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Subproceso {{ id }}?"
+      },
+      "detail": {
+        "title": "Subproceso"
+      },
+      "idSubproceso": "Id Subproceso",
+      "spDescripcion": "Sp Descripcion",
+      "idProceso": "Id Proceso",
+      "idMacroproceso": "Id Macroproceso",
+      "idVerificador": "Id Verificador"
+    }
+  }
+}

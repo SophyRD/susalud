@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.criteriosEvaluacion.home.title">Criterios Evaluacions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-criterios-evaluacion" [routerLink]="['/criterios-evaluacion/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.criteriosEvaluacion.home.createLabel">
+            Create a new Criterios Evaluacion
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="criteriosEvaluacions?.length === 0">
+        <span jhiTranslate="susaludApp.criteriosEvaluacion.home.notFound">No criteriosEvaluacions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="criteriosEvaluacions && criteriosEvaluacions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacion">Id Criterios Evaluacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.ceNombre">Ce Nombre</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaCreacion">Ce Fecha Creacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.ceFechaModificacion">Ce Fecha Modificacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idAutoevalucion">Id Autoevalucion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idMes">Id Mes</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idEstado">Id Estado</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idVerificador">Id Verificador</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.criteriosEvaluacion.idCriteriosEvaluacionXItem">Id Criterios Evaluacion X Item</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let criteriosEvaluacion of criteriosEvaluacions ;trackBy: trackId">
+                    <td><a [routerLink]="['/criterios-evaluacion', criteriosEvaluacion.id, 'view']">{{ criteriosEvaluacion.id }}</a></td>
+                    <td>{{ criteriosEvaluacion.idCriteriosEvaluacion }}</td>
+                    <td>{{ criteriosEvaluacion.ceNombre }}</td>
+                    <td>{{ criteriosEvaluacion.ceFechaCreacion | date:'mediumDate' }}</td>
+                    <td>{{ criteriosEvaluacion.ceFechaModificacion | date:'mediumDate' }}</td>
+                    <td>{{ criteriosEvaluacion.idAutoevalucionXproceso }}</td>
+                    <td>{{ criteriosEvaluacion.idAutoevalucion }}</td>
+                    <td>{{ criteriosEvaluacion.idMes }}</td>
+                    <td>{{ criteriosEvaluacion.idUsuariosXevaluacion }}</td>
+                    <td>{{ criteriosEvaluacion.idEstado }}</td>
+                    <td>{{ criteriosEvaluacion.idVerificador }}</td>
+                    <td>{{ criteriosEvaluacion.idCriteriosEvaluacionXItem }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/criterios-evaluacion', criteriosEvaluacion.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/criterios-evaluacion', criteriosEvaluacion.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(criteriosEvaluacion)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

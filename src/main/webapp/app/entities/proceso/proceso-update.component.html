@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-proceso-heading" jhiTranslate="susaludApp.proceso.home.createOrEditLabel">Create or edit a Proceso</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.proceso.idProceso" for="field_idProceso">Id Proceso</label>
+                    <input type="number" class="form-control" name="idProceso" id="field_idProceso"
+                           formControlName="idProceso"/>
+                    <div *ngIf="editForm.get('idProceso')!.invalid && (editForm.get('idProceso')!.dirty || editForm.get('idProceso')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idProceso')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idProceso')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.proceso.prDescripcion" for="field_prDescripcion">Pr Descripcion</label>
+                    <input type="text" class="form-control" name="prDescripcion" id="field_prDescripcion"
+                           formControlName="prDescripcion"/>
+                    <div *ngIf="editForm.get('prDescripcion')!.invalid && (editForm.get('prDescripcion')!.dirty || editForm.get('prDescripcion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prDescripcion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.proceso.idMacroproceso" for="field_idMacroproceso">Id Macroproceso</label>
+                    <div class="input-group">
+                        <input id="field_idMacroproceso" type="text" class="form-control" name="idMacroproceso" ngbDatepicker #idMacroprocesoDp="ngbDatepicker" formControlName="idMacroproceso"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="idMacroprocesoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('idMacroproceso')!.invalid && (editForm.get('idMacroproceso')!.dirty || editForm.get('idMacroproceso')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idMacroproceso')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="susaludApp.proceso.idVerificador" for="field_idVerificador">Id Verificador</label>
+                    <input type="number" class="form-control" name="idVerificador" id="field_idVerificador"
+                           formControlName="idVerificador"/>
+                    <div *ngIf="editForm.get('idVerificador')!.invalid && (editForm.get('idVerificador')!.dirty || editForm.get('idVerificador')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idVerificador')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idVerificador')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

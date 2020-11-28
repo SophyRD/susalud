@@ -1,0 +1,24 @@
+{
+  "susaludApp": {
+    "verificador": {
+      "home": {
+        "title": "Verificadors",
+        "createLabel": "Crear nuevo Verificador",
+        "createOrEditLabel": "Crear o editar Verificador",
+        "notFound": "Ningún Verificadors encontrado"
+      },
+      "created": "Un nuevo Verificador ha sido creado con el identificador {{ param }}",
+      "updated": "Un Verificador ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Verificador ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Verificador {{ id }}?"
+      },
+      "detail": {
+        "title": "Verificador"
+      },
+      "idVerificador": "Id Verificador",
+      "v1FechaCreacion": "V 1 Fecha Creacion",
+      "v1FechaModificacion": "V 1 Fecha Modificacion"
+    }
+  }
+}

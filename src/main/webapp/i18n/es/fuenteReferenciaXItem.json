@@ -1,0 +1,25 @@
+{
+  "susaludApp": {
+    "fuenteReferenciaXItem": {
+      "home": {
+        "title": "Fuente Referencia X Items",
+        "createLabel": "Crear nuevo Fuente Referencia X Item",
+        "createOrEditLabel": "Crear o editar Fuente Referencia X Item",
+        "notFound": "Ningún Fuente Referencia X Items encontrado"
+      },
+      "created": "Un nuevo Fuente Referencia X Item ha sido creado con el identificador {{ param }}",
+      "updated": "Un Fuente Referencia X Item ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Fuente Referencia X Item ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Fuente Referencia X Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Fuente Referencia X Item"
+      },
+      "idFuenteReferenciaXItem": "Id Fuente Referencia X Item",
+      "friFechaCreacion": "Fri Fecha Creacion",
+      "friFechaModificacion": "Fri Fecha Modificacion",
+      "friNombre": "Fri Nombre"
+    }
+  }
+}

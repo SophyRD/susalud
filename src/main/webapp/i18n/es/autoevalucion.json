@@ -1,0 +1,26 @@
+{
+  "susaludApp": {
+    "autoevalucion": {
+      "home": {
+        "title": "Autoevalucions",
+        "createLabel": "Crear nuevo Autoevalucion",
+        "createOrEditLabel": "Crear o editar Autoevalucion",
+        "notFound": "Ningún Autoevalucions encontrado"
+      },
+      "created": "Un nuevo Autoevalucion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Autoevalucion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Autoevalucion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Autoevalucion {{ id }}?"
+      },
+      "detail": {
+        "title": "Autoevalucion"
+      },
+      "idAutoevalucion": "Id Autoevalucion",
+      "aAvance": "A Avance",
+      "idMes": "Id Mes",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion",
+      "idEstado": "Id Estado"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subproceso">
+            <h2><span jhiTranslate="susaludApp.subproceso.detail.title">Subproceso</span> {{ subproceso.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.subproceso.idSubproceso">Id Subproceso</span></dt>
+                <dd>
+                    <span>{{ subproceso.idSubproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.subproceso.spDescripcion">Sp Descripcion</span></dt>
+                <dd>
+                    <span>{{ subproceso.spDescripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.subproceso.idProceso">Id Proceso</span></dt>
+                <dd>
+                    <span>{{ subproceso.idProceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.subproceso.idMacroproceso">Id Macroproceso</span></dt>
+                <dd>
+                    <span>{{ subproceso.idMacroproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.subproceso.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ subproceso.idVerificador }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subproceso', subproceso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

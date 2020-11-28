@@ -1,0 +1,32 @@
+{
+  "susaludApp": {
+    "criteriosEvaluacion": {
+      "home": {
+        "title": "Criterios Evaluacions",
+        "createLabel": "Crear nuevo Criterios Evaluacion",
+        "createOrEditLabel": "Crear o editar Criterios Evaluacion",
+        "notFound": "Ningún Criterios Evaluacions encontrado"
+      },
+      "created": "Un nuevo Criterios Evaluacion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Criterios Evaluacion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Criterios Evaluacion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Criterios Evaluacion {{ id }}?"
+      },
+      "detail": {
+        "title": "Criterios Evaluacion"
+      },
+      "idCriteriosEvaluacion": "Id Criterios Evaluacion",
+      "ceNombre": "Ce Nombre",
+      "ceFechaCreacion": "Ce Fecha Creacion",
+      "ceFechaModificacion": "Ce Fecha Modificacion",
+      "idAutoevalucionXproceso": "Id Autoevalucion Xproceso",
+      "idAutoevalucion": "Id Autoevalucion",
+      "idMes": "Id Mes",
+      "idUsuariosXevaluacion": "Id Usuarios Xevaluacion",
+      "idEstado": "Id Estado",
+      "idVerificador": "Id Verificador",
+      "idCriteriosEvaluacionXItem": "Id Criterios Evaluacion X Item"
+    }
+  }
+}

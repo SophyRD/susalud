@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.fuenteReferencial.home.title">Fuente Referencials</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fuente-referencial" [routerLink]="['/fuente-referencial/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.fuenteReferencial.home.createLabel">
+            Create a new Fuente Referencial
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fuenteReferencials?.length === 0">
+        <span jhiTranslate="susaludApp.fuenteReferencial.home.notFound">No fuenteReferencials found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fuenteReferencials && fuenteReferencials.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idFuenteReferencial">Id Fuente Referencial</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.frNombre">Fr Nombre</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.frFechaCreacion">Fr Fecha Creacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.frFechaModificacion">Fr Fecha Modificacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idAutoevalucion">Id Autoevalucion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idMes">Id Mes</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idEstado">Id Estado</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idVerificador">Id Verificador</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.fuenteReferencial.idFuenteReferenciaXItem">Id Fuente Referencia X Item</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fuenteReferencial of fuenteReferencials ;trackBy: trackId">
+                    <td><a [routerLink]="['/fuente-referencial', fuenteReferencial.id, 'view']">{{ fuenteReferencial.id }}</a></td>
+                    <td>{{ fuenteReferencial.idFuenteReferencial }}</td>
+                    <td>{{ fuenteReferencial.frNombre }}</td>
+                    <td>{{ fuenteReferencial.frFechaCreacion | date:'mediumDate' }}</td>
+                    <td>{{ fuenteReferencial.frFechaModificacion | date:'mediumDate' }}</td>
+                    <td>{{ fuenteReferencial.idAutoevalucionXproceso }}</td>
+                    <td>{{ fuenteReferencial.idAutoevalucion }}</td>
+                    <td>{{ fuenteReferencial.idMes }}</td>
+                    <td>{{ fuenteReferencial.idUsuariosXevaluacion }}</td>
+                    <td>{{ fuenteReferencial.idEstado }}</td>
+                    <td>{{ fuenteReferencial.idVerificador }}</td>
+                    <td>{{ fuenteReferencial.idFuenteReferenciaXItem }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fuente-referencial', fuenteReferencial.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fuente-referencial', fuenteReferencial.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fuenteReferencial)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

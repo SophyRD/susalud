@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="macroproceso">
+            <h2><span jhiTranslate="susaludApp.macroproceso.detail.title">Macroproceso</span> {{ macroproceso.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.macroproceso.idMacroproceso">Id Macroproceso</span></dt>
+                <dd>
+                    <span>{{ macroproceso.idMacroproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.macroproceso.maFechaCreacion">Ma Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ macroproceso.maFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.macroproceso.maFechaModificacion">Ma Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ macroproceso.maFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.macroproceso.verificadorlIdVerificador">Verificadorl Id Verificador</span></dt>
+                <dd>
+                    <span>{{ macroproceso.verificadorlIdVerificador }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/macroproceso', macroproceso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

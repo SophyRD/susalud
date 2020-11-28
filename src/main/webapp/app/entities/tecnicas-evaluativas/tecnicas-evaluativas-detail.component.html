@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tecnicasEvaluativas">
+            <h2><span jhiTranslate="susaludApp.tecnicasEvaluativas.detail.title">Tecnicas Evaluativas</span> {{ tecnicasEvaluativas.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idTecnicasEvaluativas">Id Tecnicas Evaluativas</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idTecnicasEvaluativas }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.teNombre">Te Nombre</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.teNombre }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.teFechaCreacion">Te Fecha Creacion</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.teFechaCreacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.teFechaModificacion">Te Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.teFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idAutoevalucionXproceso">Id Autoevalucion Xproceso</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idAutoevalucionXproceso }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idAutoevalucion">Id Autoevalucion</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idAutoevalucion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idMes">Id Mes</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idMes }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idUsuariosXevaluacion">Id Usuarios Xevaluacion</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idUsuariosXevaluacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idEstado">Id Estado</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idEstado }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idVerificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.tecnicasEvaluativas.idTecnicasEvaluativasXItem">Id Tecnicas Evaluativas X Item</span></dt>
+                <dd>
+                    <span>{{ tecnicasEvaluativas.idTecnicasEvaluativasXItem }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tecnicas-evaluativas', tecnicasEvaluativas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

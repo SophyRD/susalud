@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="susaludApp.periodo.home.title">Periodos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-periodo" [routerLink]="['/periodo/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="susaludApp.periodo.home.createLabel">
+            Create a new Periodo
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="periodos?.length === 0">
+        <span jhiTranslate="susaludApp.periodo.home.notFound">No periodos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="periodos && periodos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.periodo.idPeriodo">Id Periodo</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.periodo.pPeriodo">P Periodo</span></th>
+                    <th scope="col" ><span jhiTranslate="susaludApp.periodo.mesIdMes">Mes Id Mes</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let periodo of periodos ;trackBy: trackId">
+                    <td><a [routerLink]="['/periodo', periodo.id, 'view']">{{ periodo.id }}</a></td>
+                    <td>{{ periodo.idPeriodo }}</td>
+                    <td>{{ periodo.pPeriodo }}</td>
+                    <td>{{ periodo.mesIdMes }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/periodo', periodo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/periodo', periodo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(periodo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

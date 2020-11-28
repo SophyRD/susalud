@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="maestraverificador">
+            <h2><span jhiTranslate="susaludApp.maestraverificador.detail.title">Maestraverificador</span> {{ maestraverificador.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="susaludApp.maestraverificador.idMaestraverificador">Id Maestraverificador</span></dt>
+                <dd>
+                    <span>{{ maestraverificador.idMaestraverificador }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.maestraverificador.mvFecha">Mv Fecha</span></dt>
+                <dd>
+                    <span>{{ maestraverificador.mvFecha }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.maestraverificador.mvFechaModificacion">Mv Fecha Modificacion</span></dt>
+                <dd>
+                    <span>{{ maestraverificador.mvFechaModificacion }}</span>
+                </dd>
+                <dt><span jhiTranslate="susaludApp.maestraverificador.idVerificador">Id Verificador</span></dt>
+                <dd>
+                    <span>{{ maestraverificador.idVerificador }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/maestraverificador', maestraverificador.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
