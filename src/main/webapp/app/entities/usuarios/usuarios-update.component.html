@@ -13,15 +13,12 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="susaludApp.usuarios.idUsuario" for="field_idUsuario">Id Usuario</label>
-                    <input type="number" class="form-control" name="idUsuario" id="field_idUsuario"
-                           formControlName="idUsuario"/>
+                    <input type="number" class="form-control" name="idUsuario" id="field_idUsuario" formControlName="idUsuario" />
                     <div *ngIf="editForm.get('idUsuario')!.invalid && (editForm.get('idUsuario')!.dirty || editForm.get('idUsuario')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('idUsuario')?.errors?.required" jhiTranslate="entity.validation.required">
+                        <small class="form-text text-danger" *ngIf="editForm.get('idUsuario')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
-                        <small class="form-text text-danger"
-                            [hidden]="!editForm.get('idUsuario')?.errors?.number" jhiTranslate="entity.validation.number">
+                        <small class="form-text text-danger" [hidden]="!editForm.get('idUsuario')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
@@ -29,11 +26,9 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="susaludApp.usuarios.usUsuario" for="field_usUsuario">Us Usuario</label>
-                    <input type="text" class="form-control" name="usUsuario" id="field_usUsuario"
-                           formControlName="usUsuario"/>
+                    <input type="text" class="form-control" name="usUsuario" id="field_usUsuario" formControlName="usUsuario" />
                     <div *ngIf="editForm.get('usUsuario')!.invalid && (editForm.get('usUsuario')!.dirty || editForm.get('usUsuario')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('usUsuario')?.errors?.required" jhiTranslate="entity.validation.required">
+                        <small class="form-text text-danger" *ngIf="editForm.get('usUsuario')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
                     </div>
@@ -41,11 +36,9 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="susaludApp.usuarios.usContrasena" for="field_usContrasena">Us Contrasena</label>
-                    <input type="text" class="form-control" name="usContrasena" id="field_usContrasena"
-                           formControlName="usContrasena"/>
+                    <input type="text" class="form-control" name="usContrasena" id="field_usContrasena" formControlName="usContrasena" />
                     <div *ngIf="editForm.get('usContrasena')!.invalid && (editForm.get('usContrasena')!.dirty || editForm.get('usContrasena')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('usContrasena')?.errors?.required" jhiTranslate="entity.validation.required">
+                        <small class="form-text text-danger" *ngIf="editForm.get('usContrasena')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
                     </div>
@@ -53,15 +46,12 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="susaludApp.usuarios.usuariosIdUsuarios" for="field_usuariosIdUsuarios">Usuarios Id Usuarios</label>
-                    <input type="number" class="form-control" name="usuariosIdUsuarios" id="field_usuariosIdUsuarios"
-                           formControlName="usuariosIdUsuarios"/>
+                    <input type="number" class="form-control" name="usuariosIdUsuarios" id="field_usuariosIdUsuarios" formControlName="usuariosIdUsuarios" />
                     <div *ngIf="editForm.get('usuariosIdUsuarios')!.invalid && (editForm.get('usuariosIdUsuarios')!.dirty || editForm.get('usuariosIdUsuarios')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('usuariosIdUsuarios')?.errors?.required" jhiTranslate="entity.validation.required">
+                        <small class="form-text text-danger" *ngIf="editForm.get('usuariosIdUsuarios')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
-                        <small class="form-text text-danger"
-                            [hidden]="!editForm.get('usuariosIdUsuarios')?.errors?.number" jhiTranslate="entity.validation.number">
+                        <small class="form-text text-danger" [hidden]="!editForm.get('usuariosIdUsuarios')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
@@ -69,15 +59,12 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="susaludApp.usuarios.usuariosPerfilIdPerfil" for="field_usuariosPerfilIdPerfil">Usuarios Perfil Id Perfil</label>
-                    <input type="number" class="form-control" name="usuariosPerfilIdPerfil" id="field_usuariosPerfilIdPerfil"
-                           formControlName="usuariosPerfilIdPerfil"/>
+                    <input type="number" class="form-control" name="usuariosPerfilIdPerfil" id="field_usuariosPerfilIdPerfil" formControlName="usuariosPerfilIdPerfil" />
                     <div *ngIf="editForm.get('usuariosPerfilIdPerfil')!.invalid && (editForm.get('usuariosPerfilIdPerfil')!.dirty || editForm.get('usuariosPerfilIdPerfil')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('usuariosPerfilIdPerfil')?.errors?.required" jhiTranslate="entity.validation.required">
+                        <small class="form-text text-danger" *ngIf="editForm.get('usuariosPerfilIdPerfil')?.errors?.required" jhiTranslate="entity.validation.required">
                         This field is required.
                         </small>
-                        <small class="form-text text-danger"
-                            [hidden]="!editForm.get('usuariosPerfilIdPerfil')?.errors?.number" jhiTranslate="entity.validation.number">
+                        <small class="form-text text-danger" [hidden]="!editForm.get('usuariosPerfilIdPerfil')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
