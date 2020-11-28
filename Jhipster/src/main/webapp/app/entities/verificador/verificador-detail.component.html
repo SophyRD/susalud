@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="verificador">
+            <h2><span jhiTranslate="proyectoApp.verificador.detail.title">Verificador</span> {{ verificador.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="proyectoApp.verificador.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{ verificador.codigo }}</span>
+                </dd>
+                <dt><span jhiTranslate="proyectoApp.verificador.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{ verificador.descripcion }}</span>
+                </dd>
+                <dt><span jhiTranslate="proyectoApp.verificador.estado">Estado</span></dt>
+                <dd>
+                    <span>{{ verificador.estado }}</span>
+                </dd>
+                <dt><span jhiTranslate="proyectoApp.verificador.macroproceso">Macroproceso</span></dt>
+                <dd>
+                    <div *ngIf="verificador.macroproceso">
+                        <a [routerLink]="['/macroproceso', verificador.macroproceso?.id, 'view']">{{ verificador.macroproceso?.descripcion }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="proyectoApp.verificador.proceso">Proceso</span></dt>
+                <dd>
+                    <div *ngIf="verificador.proceso">
+                        <a [routerLink]="['/proceso', verificador.proceso?.id, 'view']">{{ verificador.proceso?.descripcion }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="proyectoApp.verificador.subproceso">Subproceso</span></dt>
+                <dd>
+                    <div *ngIf="verificador.subproceso">
+                        <a [routerLink]="['/subproceso', verificador.subproceso?.id, 'view']">{{ verificador.subproceso?.descripcion }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/verificador', verificador.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

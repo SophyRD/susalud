@@ -1,0 +1,37 @@
+{
+  "name": "Macroproceso",
+  "fields": [
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "proceso",
+      "otherEntityRelationshipName": "macroproceso",
+      "relationshipName": "proceso"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "verificador",
+      "otherEntityRelationshipName": "macroproceso",
+      "relationshipName": "verificador"
+    }
+  ],
+  "changelogDate": "20201125015111",
+  "entityTableName": "macroproceso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

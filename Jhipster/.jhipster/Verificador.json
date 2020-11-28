@@ -1,0 +1,62 @@
+{
+  "name": "Verificador",
+  "fields": [
+    {
+      "fieldName": "codigo",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "macroproceso",
+      "otherEntityRelationshipName": "verificador",
+      "relationshipName": "macroproceso",
+      "otherEntityField": "descripcion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "proceso",
+      "otherEntityRelationshipName": "verificador",
+      "relationshipName": "proceso",
+      "otherEntityField": "descripcion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "subproceso",
+      "otherEntityRelationshipName": "verificador",
+      "relationshipName": "subproceso",
+      "otherEntityField": "descripcion"
+    }
+  ],
+  "changelogDate": "20201125015411",
+  "entityTableName": "verificador",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
+}

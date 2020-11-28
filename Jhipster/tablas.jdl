@@ -1,0 +1,37 @@
+entity Macroproceso{
+	descripcion String required
+}
+
+entity Proceso{
+	descripcion String required
+}
+
+entity Subproceso{
+    descripcion String required
+}
+
+entity Verificador {
+	codigo Integer required
+    descripcion String required
+    estado String required
+}
+
+relationship OneToMany {
+	Macroproceso to Proceso{Macroproceso(descripcion)}
+}
+
+relationship OneToMany {
+	Proceso to Subproceso{Proceso(descripcion)}
+}
+
+relationship OneToMany {
+	Macroproceso to Verificador{Macroproceso(descripcion)}
+}
+
+relationship OneToMany {
+	Proceso to Verificador{Proceso(descripcion)}
+}
+
+relationship OneToMany {
+	Subproceso to Verificador{Subproceso(descripcion)}
+}

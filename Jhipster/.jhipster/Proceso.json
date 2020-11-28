@@ -1,0 +1,44 @@
+{
+  "name": "Proceso",
+  "fields": [
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "subproceso",
+      "otherEntityRelationshipName": "proceso",
+      "relationshipName": "subproceso"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "verificador",
+      "otherEntityRelationshipName": "proceso",
+      "relationshipName": "verificador"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "macroproceso",
+      "otherEntityRelationshipName": "proceso",
+      "relationshipName": "macroproceso",
+      "otherEntityField": "descripcion"
+    }
+  ],
+  "changelogDate": "20201125015211",
+  "entityTableName": "proceso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
