@@ -45,7 +45,7 @@ describe('Component Tests', () => {
             name: 'server.ports',
             properties: {
               'local.server.port': {
-                value: '8083',
+                value: '8080',
               },
             },
           },

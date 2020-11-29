@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { JhiAlertService, JhiEventManager } from 'ng-jhipster';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { SusaludTestModule } from '../../../test.module';
 import { AlertErrorComponent } from 'app/shared/alert/alert-error.component';
@@ -15,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [SusaludTestModule, TranslateModule.forRoot()],
+        imports: [SusaludTestModule],
         declarations: [AlertErrorComponent],
         providers: [
           JhiEventManager,
@@ -41,7 +40,7 @@ describe('Component Tests', () => {
         eventManager.broadcast({ name: 'susaludApp.httpError', content: { status: 0 } });
         // THEN
         expect(comp.alerts.length).toBe(1);
-        expect(comp.alerts[0].msg).toBe('error.server.not.reachable');
+        expect(comp.alerts[0].msg).toBe('Server not reachable');
       });
 
       it('Should display an alert on status 404', () => {
@@ -49,7 +48,7 @@ describe('Component Tests', () => {
         eventManager.broadcast({ name: 'susaludApp.httpError', content: { status: 404 } });
         // THEN
         expect(comp.alerts.length).toBe(1);
-        expect(comp.alerts[0].msg).toBe('error.url.not.found');
+        expect(comp.alerts[0].msg).toBe('Not found');
       });
 
       it('Should display an alert on generic error', () => {
@@ -65,7 +64,7 @@ describe('Component Tests', () => {
       it('Should display an alert on status 400 for generic error', () => {
         // GIVEN
         const response = new HttpErrorResponse({
-          url: 'http://localhost:8083/api/foos',
+          url: 'http://localhost:8080/api/foos',
           headers: new HttpHeaders(),
           status: 400,
           statusText: 'Bad Request',
@@ -86,7 +85,7 @@ describe('Component Tests', () => {
       it('Should display an alert on status 400 for generic error without message', () => {
         // GIVEN
         const response = new HttpErrorResponse({
-          url: 'http://localhost:8083/api/foos',
+          url: 'http://localhost:8080/api/foos',
           headers: new HttpHeaders(),
           status: 400,
           error: 'Bad Request',
@@ -100,7 +99,7 @@ describe('Component Tests', () => {
       it('Should display an alert on status 400 for invalid parameters', () => {
         // GIVEN
         const response = new HttpErrorResponse({
-          url: 'http://localhost:8083/api/foos',
+          url: 'http://localhost:8080/api/foos',
           headers: new HttpHeaders(),
           status: 400,
           statusText: 'Bad Request',
@@ -116,13 +115,13 @@ describe('Component Tests', () => {
         eventManager.broadcast({ name: 'susaludApp.httpError', content: response });
         // THEN
         expect(comp.alerts.length).toBe(1);
-        expect(comp.alerts[0].msg).toBe('error.Size');
+        expect(comp.alerts[0].msg).toBe('Error on field "MinField"');
       });
 
       it('Should display an alert on status 400 for error headers', () => {
         // GIVEN
         const response = new HttpErrorResponse({
-          url: 'http://localhost:8083/api/foos',
+          url: 'http://localhost:8080/api/foos',
           headers: new HttpHeaders().append('app-error', 'Error Message').append('app-params', 'foo'),
           status: 400,
           statusText: 'Bad Request',

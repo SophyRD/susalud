@@ -1,0 +1,47 @@
+{
+  "name": "Proceso",
+  "fields": [
+    {
+      "fieldName": "idProceso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "prDescripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "macroprocesoIdMacroproseso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "macroprocesoVerificadorIdVerificador",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "subProceso",
+      "otherEntityRelationshipName": "proceso",
+      "relationshipName": "idProceso"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "macroProceso",
+      "otherEntityRelationshipName": "idMacroproceso",
+      "relationshipName": "macroProceso",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201129002650",
+  "entityTableName": "proceso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span>Sub Procesos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sub-proceso" [routerLink]="['/sub-proceso/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Sub Proceso
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="subProcesos?.length === 0">
+        <span>No subProcesos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="subProcesos && subProcesos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span>ID</span></th>
+                    <th scope="col" ><span>Id Subproceso</span></th>
+                    <th scope="col" ><span>Sp Descripcion</span></th>
+                    <th scope="col" ><span>Proceso Id Proceso</span></th>
+                    <th scope="col" ><span>Proceso Macroproceso Id Macroproceso</span></th>
+                    <th scope="col" ><span>Proceso Macroproceso Verificador Id Verificador</span></th>
+                    <th scope="col" ><span>Proceso</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subProceso of subProcesos ;trackBy: trackId">
+                    <td><a [routerLink]="['/sub-proceso', subProceso.id, 'view']">{{ subProceso.id }}</a></td>
+                    <td>{{ subProceso.idSubproceso }}</td>
+                    <td>{{ subProceso.spDescripcion }}</td>
+                    <td>{{ subProceso.procesoIdProceso }}</td>
+                    <td>{{ subProceso.procesoMacroprocesoIdMacroproceso }}</td>
+                    <td>{{ subProceso.procesoMacroprocesoVerificadorIdVerificador }}</td>
+                    <td>
+                        <div *ngIf="subProceso.proceso">
+                            <a [routerLink]="['/proceso', subProceso.proceso?.id, 'view']" >{{ subProceso.proceso?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/sub-proceso', subProceso.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/sub-proceso', subProceso.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(subProceso)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

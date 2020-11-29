@@ -1,0 +1,45 @@
+{
+  "name": "SubProceso",
+  "fields": [
+    {
+      "fieldName": "idSubproceso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "spDescripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "procesoIdProceso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "procesoMacroprocesoIdMacroproceso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "procesoMacroprocesoVerificadorIdVerificador",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "proceso",
+      "otherEntityRelationshipName": "idProceso",
+      "relationshipName": "proceso",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201129002750",
+  "entityTableName": "sub_proceso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

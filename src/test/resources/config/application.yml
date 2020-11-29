@@ -13,17 +13,10 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-  client:
-    enabled: false
-  instance:
-    appname: susalud
-    instanceId: susalud:${spring.application.instance-id:${random.value}}
-
 spring:
   profiles:
-    # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
-    #active: testcontainers
+  # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
+  #active: testcontainers
   application:
     name: susalud
   datasource:
@@ -99,12 +92,12 @@ jhipster:
       queue-size: 512
   mail:
     from: test@localhost
-    base-url: http://127.0.0.1:8083
+    base-url: http://127.0.0.1:8080
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YThiOWE0ZjUzOWFlODA4YTBjYmMzN2MzZDAzMmE2MjdjMTQ5ZjA5MjY5YmEzM2IxMWI0ODcwYjk5Mzc5N2I3NDJkYWY0ZWE3NWZlYzI3YTBlODYyNmY0NTgwNjA0OTczZDllY2E2NTVkYTAwZGVhOTI3MDBhMjc1Y2U3N2M3ZmI=
+        base64-secret: ODAxODU4ZmQ2NzA0ZDNkM2I2ODA1NDRkMjQ4OTg5NTk4MzZkOGI1ZDljOGE5YWZmODg4M2E5YzE0MDUwZWZiYzdlYmM0ZDU1NzUxYmM2MzQ0NjRkY2E5Y2I0OTc4NDhiMjM0YjBhNDc0NmZiYWI4MjJkMzQxY2RkMzU1ZTVhOWY=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

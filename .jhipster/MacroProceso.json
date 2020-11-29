@@ -1,0 +1,37 @@
+{
+  "name": "MacroProceso",
+  "fields": [
+    {
+      "fieldName": "idMacroproceso",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maFechaCreacion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "verificadorIdFerificador",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "proceso",
+      "otherEntityRelationshipName": "macroProceso",
+      "relationshipName": "idMacroproceso"
+    }
+  ],
+  "changelogDate": "20201129002850",
+  "javadoc": "not an ignored comment",
+  "entityTableName": "macro_proceso",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
